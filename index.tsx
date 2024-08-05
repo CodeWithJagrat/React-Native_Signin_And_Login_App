@@ -58,8 +58,11 @@ const App = () => {
         <Button title="show" onPress={()=> secureTextEntry ? setSecureTextEntry(false) : setSecureTextEntry(true)}/>
       </View>
       
-      <View style={{marginBottom: 10}}><Button color='green' onPress={()=> sendData()} title="Send Details"/></View>
-      <Button title="Clear Details" onPress={resetFormData}/>
+      <View style={styles.btn}>
+        <View style={{marginBottom: 10}}><Button color='green' onPress={()=> sendData()} title="Send Details"/></View>
+        <View><Button title="Clear Details" onPress={resetFormData}/></View>
+      </View>
+      
       <View>
         {
           display ? 
@@ -84,6 +87,9 @@ const styles = StyleSheet.create({
     borderColor: 'blue',
     margin: 10,
   },
+  btn: {
+    margin: 'auto'
+  }
 });
 
 export default App;
